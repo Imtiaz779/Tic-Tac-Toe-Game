@@ -88,18 +88,19 @@ export default function Game() {
       description = 'Go to game start';
     }
     return (
-      <li key={move}>
+      <li key={move}
+      className="bg-gray-800 text-white mb-1 p-1 rounded-sm">
         <button onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );
   });
 
    return (
-    <div className="flex items-center justify-center gap-x-10 text-center py-10">
-      <div className="">
+    <div className="flex items-center justify-center p-4">
+      <div className="mr-16">
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
-      <div className="">
+      <div className="border border-gray-300 p-2 text-lg">
         <ol>{moves}</ol>
       </div>
     </div>
